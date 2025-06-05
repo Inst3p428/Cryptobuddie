@@ -39,6 +39,25 @@ crypto_db = {
 #----Rule-based answers using if statements.
 disclaimer = "⚠ Crypto is risky — always do your own research!"
 
+# ========= Required Helper Functions =========
+def get_most_sustainable():
+    return max(crypto_db, key=lambda x: crypto_db[x]["sustainability_score"])
+
+def get_trending_up():
+    # Coins with a growth rate above a threshold (e.g., > 6)
+    return [coin for coin in crypto_db if crypto_db[coin]["growth_rate"] > 6]
+
+def get_most_profitable():
+    # Let's say profitable = high growth_rate and high market_cap
+    best_coin = None
+    max_score = 0
+    for coin, data in crypto_db.items():
+        score = data["growth_rate"] * data["market_cap"]
+        if score > max_score:
+            max_score = score
+            best_coin = coin
+    return best_coin if best_coin else "None"
+
 import random
 
 def chatbot():
