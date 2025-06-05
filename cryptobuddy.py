@@ -11,6 +11,32 @@ def get_greeting():
 def speak(message):
     print(f"Cryptobudie 🤖: {message}")
 
+#----sample crypto_bd
+crypto_db = {
+    "EcoCoin": {
+        "price": 2.5,
+        "sustainability_score": 9,
+        "growth_rate": 7,
+        "market_cap": 500000000,
+        "launch_year": 2017
+    },
+    "BitSmart": {
+        "price": 50.0,
+        "sustainability_score": 5,
+        "growth_rate": 8,
+        "market_cap": 1000000000,
+        "launch_year": 2015
+    },
+    "GreenToken": {
+        "price": 3.0,
+        "sustainability_score": 10,
+        "growth_rate": 6,
+        "market_cap": 200000000,
+        "launch_year": 2018
+    }
+}
+
+
 #----Rule-based answers using if statements.
 disclaimer = "⚠ Crypto is risky — always do your own research!"
 
